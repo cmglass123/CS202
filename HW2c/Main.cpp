@@ -1,3 +1,9 @@
+/*
+Christopher Glass
+CS202x
+HW2c
+*/
+
 #include<iostream>
 using std::cout;
 
