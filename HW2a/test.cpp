@@ -51,7 +51,16 @@ TEST_CASE("Queue: First in First out.")
 
 TEST_CASE("Stack: last-in First out.")
 {
-
+	list<Student> b;
+	struct Student x = { 1, "bob", 20, 25.0, 1, 150 };
+	struct Student y = { 2, "burger", 21, 26.0, 2, 300 };
+	struct Student z = { 3, "cheese", 22, 25.0, 3, 500 };
+	b.push_back(x);
+	b.push_back(y);
+	b.push_back(z);
+	REQUIRE(z == b.back());
+	b.pop_back();
+	REQUIRE(z != b.back());
 }
 
 TEST_CASE("Insert and Find")
