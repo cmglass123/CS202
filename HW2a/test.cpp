@@ -9,6 +9,7 @@ HW2a
 #include"catch.hpp"
 #include<list>
 using std::string;
+using std::list;
 using std::cout;
 using std::endl;
 
@@ -36,6 +37,14 @@ bool operator!=(const Student& a, const Student& b)
 
 TEST_CASE("Queue: First in First out.")
 {
+	list<Student> a;
+	struct Student x = { 1, "bob", 20, 25.0, 1, 150 };
+	struct Student y = { 2, "burger", 21, 26.0, 2, 300 };
+	struct Student z = { 3, "cheese", 22, 25.0, 3, 500 };
+	a.push_back(x);
+	a.push_back(y);
+	a.push_back(z);
+	REQUIRE(z == a.back());
 
 }
 
