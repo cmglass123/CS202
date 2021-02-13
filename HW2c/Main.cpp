@@ -3,7 +3,7 @@ using std::cout;
 
 void lowerCase(char *x)
 {
-	for (int i = 0; x[i] != '0'; i++)
+	for (int i = 0; x[i] != 0; i++)
 	{
 		if (x[i] <= 'Z' && x[i] >= 'A')
 		{
@@ -14,7 +14,7 @@ void lowerCase(char *x)
 
 int main()
 {
-	char word[] = "HELLO WORLD!0";
+	char word[] = "HELLO WORLD!";
 	lowerCase(word);
 	cout << word;
 } 
