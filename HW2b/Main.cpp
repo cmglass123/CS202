@@ -7,5 +7,9 @@ auto ptrStatic = &static_storage;
 
 int main()
 {
+	int theStack;
+
+	auto freeStore = new int[3];
+
 	
 }
