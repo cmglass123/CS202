@@ -7,7 +7,14 @@ void lowerCase(char *x)
 	{
 		if (x[i] <= 90 && x[i] >= 65)
 		{
-
+			x[i] += 32;
 		}
 	}
+}
+
+int main()
+{
+	char word[] = "HELLO WORLD!";
+	lowerCase(word);
+	cout << word;
 }
