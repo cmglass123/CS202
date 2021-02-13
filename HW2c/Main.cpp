@@ -17,4 +17,4 @@ int main()
 	char word[] = "HELLO WORLD!";
 	lowerCase(word);
 	cout << word;
-}
+} 
