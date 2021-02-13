@@ -11,5 +11,7 @@ int main()
 
 	auto freeStore = new int[3];
 
+	cout << "this is the stack pointer address: " << &theStack << endl;
+	cout << "this is the static pointer address: " << &ptrStatic << endl;
 	
 }
