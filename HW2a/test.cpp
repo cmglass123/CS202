@@ -45,7 +45,8 @@ TEST_CASE("Queue: First in First out.")
 	a.push_back(y);
 	a.push_back(z);
 	REQUIRE(z == a.back());
-
+	a.pop_front();
+	REQUIRE(x != a.front());
 }
 
 TEST_CASE("Stack: last-in First out.")
