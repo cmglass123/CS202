@@ -88,7 +88,21 @@ TEST_CASE("Print the list out")
 	struct Student x = { 1, "bob", 20, 25.0, 1, 150 };
 	struct Student y = { 2, "burger", 21, 26.0, 2, 300 };
 	struct Student z = { 3, "cheese", 22, 25.0, 3, 500 };
+	d.push_back(x);
+	d.push_back(y);
+	d.push_back(z);
 
+	auto ptr = d.begin();
 
+	for (size_t i = 0; i < 3; i++)
+	{
+		cout << ptr->id<<endl;
+		cout << ptr->name << endl;
+		cout << ptr->age << endl;
+		cout << ptr->gpa << endl;
+		cout << ptr->classYear << endl;
+		cout << ptr->cash << endl;
+		ptr++;
+	}
 
 }
