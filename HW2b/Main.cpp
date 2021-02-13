@@ -51,6 +51,9 @@ int main()
 		cout << "stack is in higher memory than the free store.\n";
 	}
 
-
+	cout << &freeStore[0] << endl;
+	cout << &freeStore[1] << endl;
+	cout << &freeStore[2] << endl;
+	cout << "so a higher index means a higher address in memory!";
 	
 }
