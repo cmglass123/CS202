@@ -23,6 +23,34 @@ int main()
 		std::cout << "static data is in higher memory than the stack.\n";
 	}
 
+	cout << endl;
+
+	cout << "this is the free store pointer address: " << &freeStore << endl;
+	cout << "this is the static pointer address: " << &ptrStatic << endl;
+
+	if (ptrStatic < freeStore)
+	{
+		cout << "static data is in lower memory than the free store.\n";
+	}
+	else
+	{
+		cout << "static data is in higher memory than the free store.\n";
+	}
+
+	cout << endl;
+
+	cout << "this is the free store pointer address: " << &freeStore << endl;
+	cout << "this is the stack address: " << &theStack << endl;
+
+	if (&theStack < freeStore)
+	{
+		cout << "stack is in lower memory than the free store.\n";
+	}
+	else
+	{
+		cout << "stack is in higher memory than the free store.\n";
+	}
+
 
 	
 }
