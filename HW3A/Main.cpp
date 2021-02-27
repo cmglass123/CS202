@@ -34,10 +34,30 @@ vector<string> lineToTokens(const string& line)
 vector<TokenAndPosition> readLines(string filename)
 {
 	ifstream open(filename);
+	vector<string> temp;
+	vector<TokenAndPosition> tokens;
+	
+
+	int line;
+	unsigned int column;
 
 	if (!open)
 	{
 		cout << "ERROR CAN'T READ FILE!" << endl;
 	}
 
+	while (!open.eof())
+	{
+		string words;
+		getline(open, words);
+		++line;
+		temp = lineToTokens(words);
+		for (size_t i = 0; i < temp.size(); i++) 
+		{
+			tokens.push_back(TokenAndPosition{ temp[i], line, column });
+			column = column + temp[i].size() + 2;
+		}
+		column = 0;
+	}
+	return tokens;
 }
