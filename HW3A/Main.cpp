@@ -1,7 +1,11 @@
 #include <iostream>
+using std::cout;
+using std::endl;
 #include <fstream>
+using std::ifstream;
 #include <string>
 using std::string;
+using std::getline;
 #include <vector>
 using std::vector;
 #include "token.h"
@@ -29,5 +33,11 @@ vector<string> lineToTokens(const string& line)
 
 vector<TokenAndPosition> readLines(string filename)
 {
+	ifstream open(filename);
+
+	if (!open)
+	{
+		cout << "ERROR CAN'T READ FILE!" << endl;
+	}
 
 }
