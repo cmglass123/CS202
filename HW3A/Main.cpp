@@ -24,4 +24,10 @@ vector<string> lineToTokens(const string& line)
 			++x;
 		}
 	}
+	return first;
+}
+
+vector<TokenAndPosition> readLines(string filename)
+{
+
 }
