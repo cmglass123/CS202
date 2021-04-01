@@ -33,3 +33,31 @@ private:
 
 
 #endif // !BOX_HPP
+
+
+class FilledBox : public Box
+{
+public:
+	FilledBox();
+
+private:
+
+};
+
+class HollowBox : public Box
+{
+public:
+	HollowBox();
+
+private:
+
+};
+
+class CheckeredBox : public Box
+{
+public:
+	CheckeredBox();
+
+private:
+
+};
