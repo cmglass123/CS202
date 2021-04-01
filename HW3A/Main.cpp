@@ -15,7 +15,7 @@ vector<string> lineToTokens(const string& line)
 	string temp;
 	vector<string> first;
 	int x = 0;
-	for (size_t i = 0; i <= line.size(); ++i)
+	for (size_t i = 0; i <= line.size(); i++)
 	{
 		if (line[i] != ' ')
 		{
@@ -25,7 +25,7 @@ vector<string> lineToTokens(const string& line)
 		{
 			first.push_back(temp);
 			temp.clear();
-			++x;
+			x++;
 		}
 	}
 	return first;
@@ -38,26 +38,38 @@ vector<TokenAndPosition> readLines(string filename)
 	vector<TokenAndPosition> tokens;
 	
 
-	int line;
-	unsigned int column;
+	int line = 0;
+	unsigned int column = 0;
 
 	if (!open)
 	{
 		cout << "ERROR CAN'T READ FILE!" << endl;
 	}
-
-	while (!open.eof())
+	else
 	{
-		string words;
-		getline(open, words);
-		++line;
-		temp = lineToTokens(words);
-		for (size_t i = 0; i < temp.size(); i++) 
+		while (!open.eof())
 		{
-			tokens.push_back(TokenAndPosition{ temp[i], line, column });
-			column = column + temp[i].size() + 2;
+			string words;
+			getline(open, words);
+			line++;
+			temp = lineToTokens(words);
+			for (size_t i = 0; i < temp.size(); i++)
+			{
+				tokens.push_back(TokenAndPosition{ temp[i], line, column });
+				column = column + temp[i].size() + 2;
+			}
+			column = 0;
 		}
-		column = 0;
 	}
 	return tokens;
+}
+
+void printTokens(string lineonly, const vector<TokenAndPosition>& tokens)
+{
+	for (size_t i = 0; i < tokens.size(); ++i)
+	{
+		cout << "line: " << tokens[i]._line;
+		cout << ", Column " << tokens[i]._column << ": \"";
+		cout<< tokens[i]._token << "\"" << endl;
+	}
 }
