@@ -23,7 +23,7 @@ void Box::setWidth(int width)
 	width = _width;
 }
 
-int Box::getWidth()
+int Box::getWidth() const
 {
 	return _width;
 }
@@ -33,14 +33,13 @@ void Box::setHeight(int height)
 	height = _height;
 }
 
-int Box::getHeight()
+int Box::getHeight() const
 {
 	return _height;
 }
 
-void Box::print(ostream& os) const 
+void Box::print(ostream& os) const
 {
-	os << "this is a box\n";
 }
 
 ostream& operator<<(ostream& os, const Box& b)
@@ -68,14 +67,15 @@ string FilledBox::type()
 
 void FilledBox::print(ostream& os) const
 {
-	for(auto i=0; i<getHeight(); i++)
+	for(auto i = 0; i < getHeight(); i++)
 	{
 		for (auto x = 0; x < getWidth(); x++)
 		{
 			os << "x";
 		}
+		os << "\n";
 	}
-	os << std::endl;
+	os << "\n";
 }
 
 HollowBox::HollowBox() : Box()
@@ -86,6 +86,10 @@ HollowBox::HollowBox(int width, int height): Box(width, height)
 {
 }
 
+HollowBox::~HollowBox()
+{
+}
+
 string HollowBox::type()
 {
 	return "Hollowed";
@@ -93,6 +97,7 @@ string HollowBox::type()
 
 void HollowBox::print(ostream&)
 {
+	
 }
 
 CheckeredBox::CheckeredBox(): Box()
@@ -116,7 +121,7 @@ void CheckeredBox::print(ostream&)
 {
 }
 
-std::unique_ptr<Box> boxFactory(char c, int w, int h)
-{
-	
-}
+//std::unique_ptr<Box> boxFactory(char c, int w, int h)
+//{
+//	
+//}

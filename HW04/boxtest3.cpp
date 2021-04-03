@@ -755,6 +755,10 @@
 int main()
 {
 	Box a;
+	
+	FilledBox b(5, 5);
 
 	std::cout << a;
+
+	std::cout << b;
 }

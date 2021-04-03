@@ -18,10 +18,10 @@ public:
 	virtual string type();
 
 	void setWidth(int);
-	int getWidth();
+	int getWidth() const;
 
 	void setHeight(int);
-	int getHeight();
+	int getHeight() const;
 
 	virtual void print(ostream& os) const;
 
@@ -73,4 +73,4 @@ public:
 	void print(ostream&);
 };
 
-std::unique_ptr<Box> boxFactory(char c, int w, int h);
+//std::unique_ptr<Box> boxFactory(char c, int w, int h);
