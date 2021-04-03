@@ -754,11 +754,19 @@
 
 int main()
 {
-	Box a;
+	//Box a;
 	
-	FilledBox b(5, 5);
+	//FilledBox b(5, 5);
 
-	std::cout << a;
+	HollowBox c(10, 5);
 
-	std::cout << b;
+	//CheckeredBox d(4, 4);
+
+	//std::cout << a;
+
+	//std::cout << b;
+
+	std::cout << c;
+
+	//std::cout << d;
 }

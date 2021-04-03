@@ -58,7 +58,7 @@ public:
 
 	string type();
 
-	void print(ostream&);
+	void print(ostream& os) const;
 };
 
 class CheckeredBox : public Box
@@ -70,7 +70,7 @@ public:
 
 	string type();
 
-	void print(ostream&);
+	void print(ostream& os) const;
 };
 
 //std::unique_ptr<Box> boxFactory(char c, int w, int h);

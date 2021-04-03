@@ -95,9 +95,24 @@ string HollowBox::type()
 	return "Hollowed";
 }
 
-void HollowBox::print(ostream&)
+void HollowBox::print(ostream& os) const
 {
-	
+	for (auto i = 0; i < getHeight(); i++)
+	{
+		for (auto x = 0; x < getWidth(); x++)
+		{
+			if (i == 0 || i == getHeight()-1 || x == 0 || x == getWidth()-1)
+			{
+				os << "x";
+			}
+			else
+			{
+				os << " ";
+			}
+		}
+		os << "\n";
+	}
+	os << "\n";
 }
 
 CheckeredBox::CheckeredBox(): Box()
@@ -117,8 +132,17 @@ string CheckeredBox::type()
 	return "Chekered";
 }
 
-void CheckeredBox::print(ostream&)
+void CheckeredBox::print(ostream& os) const
 {
+	for (auto i = 0; i < getHeight(); i++)
+	{
+		for (auto x = 0; x < getWidth(); x++)
+		{
+
+		}
+		os << "\n";
+	}
+	os << "\n";
 }
 
 //std::unique_ptr<Box> boxFactory(char c, int w, int h)
