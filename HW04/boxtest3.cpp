@@ -758,7 +758,7 @@ int main()
 	
 	//FilledBox b(5, 5);
 
-	HollowBox c(10, 5);
+	//HollowBox c(10, 5);
 
 	//CheckeredBox d(4, 4);
 
@@ -766,7 +766,7 @@ int main()
 
 	//std::cout << b;
 
-	std::cout << c;
+	//std::cout << c;
 
 	//std::cout << d;
 }

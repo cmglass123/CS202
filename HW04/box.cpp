@@ -138,7 +138,14 @@ void CheckeredBox::print(ostream& os) const
 	{
 		for (auto x = 0; x < getWidth(); x++)
 		{
-
+			if ((i + x) % 2 == 0)
+			{
+				os << "x";
+			}
+			else
+			{
+				os << " ";
+			}
 		}
 		os << "\n";
 	}
