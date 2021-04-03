@@ -12,23 +12,25 @@ class Box
 {
 public:
 	Box();
+	Box(int, int);
+	~Box();
 
-	string type();
+	virtual string type();
 
-	setWidth();
-	getWidth();
+	void setWidth(int);
+	int getWidth();
 
-	setHeight();
-	getHeight();
+	void setHeight(int);
+	int getHeight();
 
-	void print(ostream& os);
+	virtual void print(ostream& os) const;
 
-	ostream& operator<<(ostream& os, const Box& b);
+	friend ostream& operator<<(ostream& os, const Box& b);
 
 private:
 	int _width;
 	int _height;
-	string type;
+	string _type;
 };
 
 
