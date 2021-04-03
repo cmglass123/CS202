@@ -75,7 +75,6 @@ void FilledBox::print(ostream& os) const
 		}
 		os << "\n";
 	}
-	os << "\n";
 }
 
 HollowBox::HollowBox() : Box()
@@ -112,7 +111,6 @@ void HollowBox::print(ostream& os) const
 		}
 		os << "\n";
 	}
-	os << "\n";
 }
 
 CheckeredBox::CheckeredBox(): Box()
@@ -149,7 +147,6 @@ void CheckeredBox::print(ostream& os) const
 		}
 		os << "\n";
 	}
-	os << "\n";
 }
 
 std::unique_ptr<Box> boxFactory(char c, int w, int h) 
