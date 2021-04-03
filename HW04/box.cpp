@@ -20,7 +20,7 @@ string Box::type()
 
 void Box::setWidth(int width)
 {
-	width = _width;
+	_width = width;
 }
 
 int Box::getWidth() const
@@ -30,7 +30,7 @@ int Box::getWidth() const
 
 void Box::setHeight(int height)
 {
-	height = _height;
+	_height = height;
 }
 
 int Box::getHeight() const
@@ -92,7 +92,7 @@ HollowBox::~HollowBox()
 
 string HollowBox::type() const
 {
-	return "Hollowed";
+	return "Hollow";
 }
 
 void HollowBox::print(ostream& os) const
@@ -129,7 +129,7 @@ CheckeredBox::~CheckeredBox()
 
 string CheckeredBox::type() const
 {
-	return "Chekered";
+	return "Checkered";
 }
 
 void CheckeredBox::print(ostream& os) const
