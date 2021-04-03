@@ -41,25 +41,36 @@ class FilledBox : public Box
 {
 public:
 	FilledBox();
+	FilledBox(int, int);
+	~FilledBox();
+	
+	string type();
 
-private:
-
+	void print(ostream& os) const;
 };
 
 class HollowBox : public Box
 {
 public:
 	HollowBox();
+	HollowBox(int, int);
+	~HollowBox();
 
-private:
+	string type();
 
+	void print(ostream&);
 };
 
 class CheckeredBox : public Box
 {
 public:
 	CheckeredBox();
+	CheckeredBox(int, int);
+	~CheckeredBox();
 
-private:
+	string type();
 
+	void print(ostream&);
 };
+
+std::unique_ptr<Box> boxFactory(char c, int w, int h);
