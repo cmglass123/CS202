@@ -60,7 +60,7 @@ FilledBox::~FilledBox()
 {
 }
 
-string FilledBox::type()
+string FilledBox::type() const
 {
 	return "Filled";
 }
@@ -90,7 +90,7 @@ HollowBox::~HollowBox()
 {
 }
 
-string HollowBox::type()
+string HollowBox::type() const
 {
 	return "Hollowed";
 }
@@ -127,7 +127,7 @@ CheckeredBox::~CheckeredBox()
 {
 }
 
-string CheckeredBox::type()
+string CheckeredBox::type() const
 {
 	return "Chekered";
 }
@@ -152,7 +152,20 @@ void CheckeredBox::print(ostream& os) const
 	os << "\n";
 }
 
-//std::unique_ptr<Box> boxFactory(char c, int w, int h)
-//{
-//	
-//}
+std::unique_ptr<Box> boxFactory(char c, int w, int h) 
+{
+	if (c == 'f')
+	{
+		return std::make_unique<FilledBox>(w, h);
+	}
+
+	if (c == 'h')
+	{
+		return std::make_unique<HollowBox>(w, h);
+	}
+
+	if (c == 'c')
+	{
+		return std::make_unique<CheckeredBox>(w, h);
+	}
+}

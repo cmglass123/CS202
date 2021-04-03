@@ -13,7 +13,7 @@ class Box
 public:
 	Box();
 	Box(int, int);
-	~Box();
+	virtual ~Box();
 
 	virtual string type();
 
@@ -44,7 +44,7 @@ public:
 	FilledBox(int, int);
 	~FilledBox();
 	
-	string type();
+	string type() const;
 
 	void print(ostream& os) const;
 };
@@ -56,7 +56,7 @@ public:
 	HollowBox(int, int);
 	~HollowBox();
 
-	string type();
+	string type() const;
 
 	void print(ostream& os) const;
 };
@@ -68,9 +68,9 @@ public:
 	CheckeredBox(int, int);
 	~CheckeredBox();
 
-	string type();
+	string type() const;
 
 	void print(ostream& os) const;
 };
 
-//std::unique_ptr<Box> boxFactory(char c, int w, int h);
+std::unique_ptr<Box> boxFactory(char c, int w, int h);
