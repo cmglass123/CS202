@@ -5,4 +5,5 @@
 #include <iostream>
 
 
+
 #endif // !RATIONAL_HPP
