@@ -497,7 +497,7 @@ void test_Rational(Tester & t)
 #define TEST(x) t.test(x,#x)
     TEST(Rational<int>(1,2) + Rational<int>(1,3) == Rational<int>(5,6));
     TEST(Rational<int>(1,2) - Rational<int>(1,3) == Rational<int>(1,6));
-    TEST(Rational<int>(1,2) * Rational<int>(1,3) == Rational<int>(1,6));
+    TEST(Rational<int>(1,2) * Rational<int>(1,3) == Rational<int>(1,6)); 
     TEST(Rational<int>(1,2) / Rational<int>(1,3) == Rational<int>(3,2));
     TEST(Rational<long long>(1,2) <  Rational<long long>(5,8));
     TEST(Rational<long long>(3,2) >  Rational<long long>(5,8));
