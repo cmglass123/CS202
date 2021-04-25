@@ -2,6 +2,7 @@
 using std::cout;
 using std::cin;
 using std::endl;
+#include <chrono>
 
 int fib(int n)
 {
@@ -43,10 +44,27 @@ int ack(int m, int n)
 	}
 }
 
+void start()
+{
+	
+
+	
+}
+
+
 int main()
 {
 	cout << fib(20) << endl;
 	cout << fib_loop(10) << endl;
-	cout << ack(5, 9);
+	auto startTime = std::chrono::steady_clock::now();
+	cout << ack(3, 9) << endl;
+	auto endTime = std::chrono::steady_clock::now();
+
+	auto elapsedTime = endTime - startTime;
+	auto tsec = std::chrono::duration_cast<std::chrono::seconds>(elapsedTime).count();
+	auto tmsec = std::chrono::duration_cast<std::chrono::milliseconds>(elapsedTime).count();
+
+	cout << tmsec;
+
 }
 
