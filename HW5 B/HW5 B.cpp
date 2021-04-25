@@ -27,9 +27,26 @@ int fib_loop(int n)
 	return fibnum;
 }
 
+int ack(int m, int n)
+{
+	if (m == 0)
+	{
+		return n + 1;
+	}
+	else if ((m > 0) && (n == 0))
+	{
+		return ack(m - 1, 1);
+	}
+	else if ((m > 0) && (n > 0))
+	{
+		return ack(m - 1, ack(m, n - 1));
+	}
+}
+
 int main()
 {
 	cout << fib(20) << endl;
-	cout << fib_loop(10);
+	cout << fib_loop(10) << endl;
+	cout << ack(5, 9);
 }
 
